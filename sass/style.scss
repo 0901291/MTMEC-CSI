@@ -1,2 +1,15 @@
+// Helpers
+@import 'helpers/_font';
+@import 'helpers/_cursors';
+
 @import '_main';
+
+// Modules
 @import 'modules/_suspects';
+@import 'modules/_questions';
+@import 'modules/_board';
+
+// Item styles
+@import 'item_styles/_polaroid';
+@import 'item_styles/_postit';
+@import 'item_styles/_item_hangers';
