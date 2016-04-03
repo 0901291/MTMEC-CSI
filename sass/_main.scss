@@ -8,6 +8,7 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
+  font-family: Arial, sans-serif;
 }
 
 html, body, #wall {
@@ -15,61 +16,14 @@ html, body, #wall {
 }
 
 #wall {
-  //position: relative;
+  //background-image: url('../img/wallpaper.jpg');
+  background-color: #7c7c7c;
 }
 
 #items-container {
   min-height: 100%;
   width: 100%;
   position: relative;
-}
-
-#items {
-  overflow: scroll;
-  position: absolute;
-  top: 0;
-  transform-origin: 0 0;
-  min-width: 100%;
-  min-height: 100%;
-  & > *:not(.corner):not(.border):not(#security-cams) {
-    top: 1000px;
-    position: absolute;
-  }
-  .item {
-    display: inline-block;
-    position: absolute;
-    &:before,
-    &:after {
-      bottom: 15px;
-      width: 50%;
-      height: 20%;
-      max-width: 300px;
-      max-height: 100px;
-      box-shadow: 0 15px 10px rgba(31, 31, 31, 0.7);
-      content: "";
-      position: absolute;
-      z-index: -2;
-      display: block;
-    }
-    &:before {
-      left: 10px;
-      transform: translate3D(0px,0px,-1px) rotate(-4deg);
-    }
-    &:after {
-      right: 10px;
-      transform: translate3D(0px,0px,-1px) rotate(4deg);
-    }
-    .item-inner {
-      height: 100%;
-      width: 100%;
-      background-color: #fff;
-    }
-    @for $i from 1 through 24 {
-      &:nth-child(#{$i}) {
-        transform: rotate((random(7) - random(7)) + deg);
-      }
-    }
-  }
 }
 
 .zoominit #items {
@@ -92,4 +46,15 @@ html, body, #wall {
       cursor: -webkit-grabbing;
     }
   }
+}
+
+#modal {
+  position: fixed;
+  z-index:100;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: #000;
+  display: none;
 }

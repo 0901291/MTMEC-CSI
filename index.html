@@ -5,6 +5,7 @@
     <title>CSI - MT-MEC Opdracht 3</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -78,8 +79,8 @@
     </section>
     <section id="items-container">
         <div id="items" class="board">
-            <div id="security-cams" class="question">
-                <div class="answer polaroid tack tack1 item" data-rules-out="lizzy,tim,plaisir,lisa">
+            <div id="security_cams" class="question">
+                <div class="answer polaroid tack tack1 item" data-rules-out="tim,plaisir">
                     <div class="item-inner">
                         <div class="item-content">
                             <span class="answer-letter"><span>A</span></span>
@@ -93,21 +94,13 @@
                         <div class="item-content">
                             <span class="answer-letter"><span>B</span></span>
                             <img src="img/questions/milkshake_bar.png" alt="">
-                            <p>Milk shake bar <span class="date">15.02.2016</span></p>
+                            <p>Milk shake bar <span class="date">28.02.2016</span></p>
                         </div>
                     </div>
                 </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
             </div>
-            <div id="calls" class="static">
-                <div class="tack tack4 item">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <img src="img/calls.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="train-tickets" class="question">
+            <div id="train_tickets" class="question">
                 <div class="answer tape tape1 item" data-rules-out="lizzy,tim,niels,lisa,kalle,amber">
                     <div class="item-inner">
                         <div class="item-content">
@@ -116,41 +109,23 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="answer tape tape2 item" data-rules-out="ian,jori,amber">
-                <div class="item-inner">
-                    <div class="item-content">
-                        <span class="answer-letter"><span>B</span></span>
-                        <img src="img/questions/trein_gouda_rotterdam.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="answer tape tape3 item" data-rules-out="plaisir,tim,kalle,jori,amber">
-                <div class="item-inner">
-                    <div class="item-content">
-                        <span class="answer-letter"><span>C</span></span>
-                        <img src="img/questions/trein_utrecht_rotterdam.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div id="beurs" class="static">
-                <div class="tack tack2 item">
+                <div class="answer tape tape2 item" data-rules-out="ian,jori,amber">
                     <div class="item-inner">
                         <div class="item-content">
-                            <img src="img/kratonkade.png" alt="">
+                            <span class="answer-letter"><span>B</span></span>
+                            <img src="img/questions/trein_gouda_rotterdam.png" alt="">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="obama" class="static">
-                <div class="tape tape1 polaroid item">
+                <div class="answer tape tape3 item" data-rules-out="plaisir,tim,kalle,jori,amber">
                     <div class="item-inner">
                         <div class="item-content">
-                            <img src="img/obama.png" alt="">
-                            <p>Meeting with Obama <span class="date">03.03.2016</span></p>
+                            <span class="answer-letter"><span>C</span></span>
+                            <img src="img/questions/trein_utrecht_rotterdam.png" alt="">
                         </div>
                     </div>
                 </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
             </div>
             <div id="music" class="question">
                 <div class="answer tack tack3 item" data-rules-out="lisa,lizzy,plaisir,tim">
@@ -177,13 +152,125 @@
                         </div>
                     </div>
                 </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
+            </div>
+            <div id="obama" class="static">
+                <div class="tape tape1 polaroid item">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <img src="img/obama.png" alt="">
+                            <p>Meeting met Obama <span class="date">03.03.2016</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="beurs" class="static">
+                <div class="tack tack2 item">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <img src="img/kratonkade.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="work" class="question">
+                <div class="answer tack tape1 item" data-rules-out="lisa,kalle,lizzy,amber,plaisir,tim">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <span class="answer-letter"><span>A</span></span>
+                            <img src="img/questions/burst.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="answer tack tack4 item" data-rules-out="lisa,ian,jori,niels,tim">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <span class="answer-letter"><span>B</span></span>
+                            <img src="img/questions/no_idea.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="answer tack tape3 item" data-rules-out="lisa,kalle,lizzy,amber,plaisir,tim">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <span class="answer-letter"><span>C</span></span>
+                            <img src="img/questions/hoppinger.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
+            </div>
+            <div id="calls" class="static">
+                <div class="tack tack4 item">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <img src="img/calls.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
+            </div>
+            <div id="utrecht_centraal" class="static">
+                <div class="tack tack1 item">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <img src="img/utrecht_centraal.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="rutte" class="static">
                 <div class="tape tape3 polaroid item">
                     <div class="item-inner">
                         <div class="item-content">
                             <img src="img/rutte.png" alt="">
-                            <p>Spotted with Rutte <span class="date">22.03.2016</span></p>
+                            <p>Gespot met Rutte <span class="date">22.03.2016</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="residence" class="question">
+                <div class="answer tape tape2 item" data-rules-out="tim,lizzy,kalle,amber">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <span class="answer-letter"><span>A</span></span>
+                            <img src="img/questions/rotterdam.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="answer tack tack2 item" data-rules-out="lisa,kalle,jori,lizzy,amber,plaisir,tim">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <span class="answer-letter"><span>B</span></span>
+                            <img src="img/questions/utrecht.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="answer tape tape1 item" data-rules-out="lisa,kalle,niels,jori,lizzy,ian,amber,plaisir">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <span class="answer-letter"><span>C</span></span>
+                            <img src="img/questions/westmaas.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
+            </div>
+            <div id="putin" class="static">
+                <div class="tape tape3 polaroid item">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <img src="img/putin.png" alt="">
+                            <p>Drinking buddies? <span class="date">17.03.2016</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="kratonkade" class="static">
+                <div class="tack tack3 item">
+                    <div class="item-inner">
+                        <div class="item-content">
+                            <img src="img/kratonkade.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -213,86 +300,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="utrecht_centraal" class="static">
-                <div class="tack tack1 item">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <img src="img/utrecht_centraal.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="work" class="question">
-                <div class="answer tack tape1 item" data-rules-out="lisa,kalle,jori,lizzy,amber,plaisir,tim">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <span class="answer-letter"><span>A</span></span>
-                            <img src="img/questions/burst.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="answer tack tack4 item" data-rules-out="lisa,ian,jori,niels,tim">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <span class="answer-letter"><span>B</span></span>
-                            <img src="img/questions/no_idea.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="answer tack tape3 item" data-rules-out="lisa,kalle,niels,lizzy,ian,amber,plaisir,tim">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <span class="answer-letter"><span>C</span></span>
-                            <img src="img/questions/hoppinger.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="putin" class="static">
-                <div class="tape tape3 polaroid item">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <img src="img/putin.png" alt="">
-                            <p>Drinking buddies? <span class="date">17.03.2016</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="residence" class="question">
-                <div class="answer tape tape2 item" data-rules-out="niels,tim,lizzy,kalle,amber">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <span class="answer-letter"><span>A</span></span>
-                            <img src="img/questions/rotterdam.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="answer tack tack2 item" data-rules-out="lisa,kalle,jori,lizzy,amber,plaisir,tim">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <span class="answer-letter"><span>B</span></span>
-                            <img src="img/questions/utrecht.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="answer tape tape1 item" data-rules-out="lisa,kalle,niels,jori,lizzy,ian,amber,plaisir">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <span class="answer-letter"><span>C</span></span>
-                            <img src="img/questions/westmaas.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="krantonkade" class="static">
-                <div class="tack tack3 item">
-                    <div class="item-inner">
-                        <div class="item-content">
-                            <img src="img/kratonkade.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                <span class="item-info"><i class="material-icons">help_outline</i></span>
             </div>
             <!-- Board border -->
             <div class="border-top border"></div>
@@ -306,11 +314,21 @@
         </div>
     </section>
 </main>
+<div class="mdl-dialog mdl-js-dialog" id="dialog">
+    <div class="mdl-dialog__title">
+        <h3>Crime Scene Investigation</h3>
+    </div>
+    <div class="mdl-dialog__content"></div>
+    <div class="mdl-dialog__actions">
+        <button type="button" id="close-dialog-button" class="mdl-button mdl-button--primary mdl-button--raised mdl-js-button mdl-js-ripple-effect">Sluiten</button>
+    </div>
+</div>
 <section id="icons">
     <i class="material-icons" id="zoom-out">zoom_out</i>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 <script src="js/script.js"></script>
 <script>
     $(initApp);

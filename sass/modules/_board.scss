@@ -3,6 +3,7 @@
   background-size: 180px;
   $borderWidth: 36px;
   padding: $borderWidth / 4;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   .border {
     position: absolute;
     z-index: -1;
