@@ -2,15 +2,12 @@ function initApp() {
     onResize();
     $(window).on('resize', onResize);
     $('.answer').on('click', setAnswer);
-    $('#zoom-out').on('mousedown', zoomOut);
+    $('#zoom').on('mousedown', zoom);
     $('img').on('dragstart', function(event) { event.preventDefault(); });
     $('#close-dialog-button').on('click', closeDialog);
     $('.item-info').on('click', showItemInfo);
-    calculateItemsSize();
-    initDialog();
-    zoomOut();
     setDialogContent('intro');
-    setTimeout(openDialog, 1000);
+    initDialog();
 }
 
 function calculateItemsSize() {
@@ -29,7 +26,11 @@ function calculateItemsSize() {
 }
 
 function onResize() {
-    $('#items-container').css('top', $('#suspects')[0].scrollHeight);
+    var sh = $('#suspects')[0].scrollHeight;
+    $('#items-container').css({
+        top: sh,
+        minHeight: $(window).height() - sh
+    });
 }
 
 function setAnswer() {
@@ -82,8 +83,17 @@ $(function () {
     });
 
     $('#items').on('mousedown', function(e){ curDown = true; curYPos = e.pageY; curXPos = e.pageX; $('body').addClass('mousedown').removeClass('mouseup') });
-    $(window).on('mouseup', function(e){ curDown = false; $('body').addClass('mouseup').removeClass('mousedown'); setZoom(1); });
+    $(window).on('mouseup', function(e){ curDown = false; $('body').addClass('mouseup').removeClass('mousedown'); });
 });
+
+function zoom() {
+    var zoom = $('#zoom');
+    if (zoom.hasClass('zoom-out')) {
+        zoomOut();
+    } else {
+        zoomIn();
+    }
+}
 
 function zoomOut() {
     var ww = $(window).width();
@@ -102,6 +112,12 @@ function zoomOut() {
     iw -= 280;
     items.css('transform-origin', ((ww - iw * scale) / 2) + 'px 20px');
     setZoom(scale);
+    $('#zoom').addClass('zoom-in').removeClass('zoom-out').text('zoom_in');
+}
+
+function zoomIn() {
+    setZoom(1);
+    $('#zoom').addClass('zoom-out').removeClass('zoom-in').text('zoom_out');
 }
 
 function setZoom(scale) {
@@ -124,18 +140,30 @@ function setDialogContent(i) {
 }
 
 function openDialog() {
-    $('#dialog')[0].MaterialDialog.show(true);
+    try {
+        $('#dialog')[0].MaterialDialog.show(true);
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 function closeDialog() {
     $('#dialog')[0].MaterialDialog.close();
     if (!$('body').hasClass('zoominit')) {
         $('body').addClass('zoominit');
-        setZoom(1);
+        zoomIn();
     }
 }
 
 function initDialog() {
+    var interval = setInterval(function () {
+        if ($('#dialog')[0].MaterialDialog != undefined) {
+            calculateItemsSize();
+            zoomOut();
+            clearInterval(interval);
+            openDialog();
+        }
+    }, 10);
     'use strict';
     var MaterialDialog = function MaterialDialog(element) {
         this.element_ = element;
@@ -194,7 +222,7 @@ function initDialog() {
                 document.body.removeChild(t.backdropElement_);
                 t.backdropElement_ = undefined;
             }
-            window.location.hash = "";
+            window.location.hash = "_";
         }, 200);
     };
     MaterialDialog.prototype['close'] = MaterialDialog.prototype.close;
@@ -215,9 +243,9 @@ var infoTexts = {
         title: 'Beveiligingscamera\'s - Crime Scene Investigation',
         text: '<p>Er is bekend dat de verdachte op het moment van de beelden op het station was. Er zijn alleen op hetzelfde tijdstip twee onbekende personen gespot. Waar zou de verdachte eerder een drankje halen?</p><p>Overal waar je komt word je in de gaten gehouden door camera\'s. Vaak passief en worden de beelden pas gebruikt als er iets gebeurd is. In sommige gevallen echter ook pro-actief. Bij bepaalde evenenten en in het openbaar vervoer word je gescand om te kijken wie je bent, en of je daar wel hoort te zijn</p>'
     },
-    train_tickers: {
+    train_tickets: {
         title: 'Openbaar vervoer - Crime Scene Investigation',
-        text: '<p>Openbaar vervoerders als de NS en de RET kunnen door jouw in- en uitcheckgedrag te monitoren heel veel informatie verkrijgen. Niet alleen </p>'
+        text: '<p>Openbaar vervoerders als de NS en de RET kunnen door jouw in- en uitcheckgedrag te monitoren heel veel informatie verkrijgen.</p>'
     },
     music: {
         title: 'Spotify - Crime Scene Investigation',

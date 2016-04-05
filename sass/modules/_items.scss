@@ -38,6 +38,9 @@
     @for $i from 1 through 24 {
       &:nth-child(#{$i}) {
         transform: rotate((random(7) - random(7)) + deg);
+        &.tape .item-hanger {
+          transform: rotate((random(12) - random(12)) + deg) translateX(-50%);
+        }
       }
     }
   }

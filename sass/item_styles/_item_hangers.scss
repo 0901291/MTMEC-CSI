@@ -1,7 +1,36 @@
-.tack {
-
+._item-hanger {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 999;
 }
 
-.tape {
+.tack .item-hanger {
+  @extend ._item-hanger;
+  width: 25px;
+  height: 39px;
+  top: -12px;
+  filter: drop-shadow(-3px 3px 2px rgba(0, 0, 0, 0.2));
+  -webkit-filter: drop-shadow(-3px 3px 2px rgba(0, 0, 0, 0.2));
+  @for $i from 1 through 3 {
+    @at-root .tack#{$i}#{&} {
+      background-image: url('../img/item_attributes/tack#{$i}.png');
+    }
+  }
+}
 
+.tape .item-hanger {
+  @extend ._item-hanger;
+  width: 25px;
+  height: 61px;
+  top: -35px;
+  filter: drop-shadow(-2px 1px 1px rgba(0, 0, 0, 0.2));
+  -webkit-filter: drop-shadow(-2px 1px 1px rgba(0, 0, 0, 0.2));
+  @for $i from 1 through 4 {
+    @at-root .tape#{$i}#{&} {
+      background-image: url('../img/item_attributes/tape#{$i}.png');
+    }
+  }
 }
