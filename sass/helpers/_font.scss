@@ -1,0 +1,8 @@
+@mixin marker-font() {
+  font-family: 'marker-font', sans-serif;
+}
+
+@font-face {
+  font-family: 'marker-font';
+  src: url(fonts/marker_font.ttf);
+}

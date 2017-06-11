@@ -1,0 +1,70 @@
+.board {
+  background: url('../img/board/cork.jpg');
+  background-size: 180px;
+  $borderWidth: 36px;
+  padding: $borderWidth / 4;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  .border {
+    position: absolute;
+    z-index: -1;
+  }
+  .corner {
+    position: absolute;
+    width: $borderWidth;
+    height: $borderWidth;
+    background-size: $borderWidth;
+    z-index: -1;
+  }
+  .border-top {
+    background-image: url('../img/board/border_top.png');
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $borderWidth;
+    background-size: auto $borderWidth;
+  }
+  .border-right {
+    background-image: url('../img/board/border_right.png');
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: $borderWidth;
+    background-size: $borderWidth auto;
+  }
+  .border-bottom {
+    background-image: url('../img/board/border_bottom.png');
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $borderWidth;
+    background-size: auto $borderWidth;
+  }
+  .border-left {
+    background-image: url('../img/board/border_left.png');
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: $borderWidth;
+    background-size: $borderWidth auto;
+  }
+  .corner-top-left {
+    background-image: url('../img/board/corner_top_left.png');
+    top: 0;
+    left: 0;
+  }
+  .corner-top-right {
+    background-image: url('../img/board/corner_top_right.png');
+    top: 0;
+    right: 0;
+  }
+  .corner-bottom-right {
+    background-image: url('../img/board/corner_bottom_right.png');
+    bottom: 0;
+    right: 0;
+  }
+  .corner-bottom-left {
+    background-image: url('../img/board/corner_bottom_left.png');
+    bottom: 0;
+    left: 0;
+  }
+}

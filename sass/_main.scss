@@ -1,0 +1,60 @@
+html, body, p, ul, ol, div, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  font-family: Arial, sans-serif;
+}
+
+html, body, #wall {
+  height: 100%;
+}
+
+#wall {
+  //background-image: url('../img/wallpaper.jpg');
+  background-color: #7c7c7c;
+}
+
+#items-container {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.zoominit #items {
+  transition: transform 0.3s ease-in-out;
+}
+
+#icons {
+  position: fixed;
+  left: 0;
+  bottom: 8px;
+  i {
+    cursor: pointer;
+    font-size: 35px;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    .mousedown & {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+  }
+}
+
+#modal {
+  position: fixed;
+  z-index:100;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: #000;
+  display: none;
+}

@@ -1,0 +1,17 @@
+body, body.mouseup {
+  #items {
+    cursor: grab;
+    cursor: -webkit-grab;
+  }
+}
+
+body.mousedown {
+  #items {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
+
+.question {
+  cursor: pointer;
+}

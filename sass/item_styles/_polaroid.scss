@@ -1,0 +1,18 @@
+.polaroid {
+  background-color: #fff;
+  .item-content {
+    padding: 16px;
+  }
+  img {
+    width: 100%;
+  }
+  p {
+    margin: 16px 0 0;
+    position: relative;
+    @include marker-font();
+    .date {
+      position: absolute;
+      right: 8px;
+    }
+  }
+}
